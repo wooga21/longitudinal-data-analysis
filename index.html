@@ -604,7 +604,6 @@ ggplot(summary_df, aes(x = time, y = mean, group = group)) +
   labs(y = "Mean ± SE", x = "Time", linetype = "Group", shape = "Group",
        title = "RM ANOVA 실습: 그룹별 시간 변화") +
   theme_bw()</code></pre>
-                            <img src="https://googleusercontent.com/file_content/1" alt="RM ANOVA 실습: 그룹별 시간 변화" class="spss-image">
                         </li>
                         <li>**전통적 RM ANOVA **:
                             <pre><code># RM ANOVA: Subject(=id) 내에서 time 반복
@@ -685,10 +684,9 @@ emmeans(fit_lmm2, ~ group | time) |&gt; pairs()</code></pre>
                         </li>
                         <li>**자주 생기는 오류와 해결법**:
                             <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
-                                <li>`Anova()` 인자 오타/누락: `idesign = ~ time_factor`를 반드시 넣어야 함. `idata`의 행 수 = `cbind`에 묶은 반복측정 열의 개수(여기선 4).</li>
-                                <li>요인형 변환 누락: `group`, `id`, `time`은 factor여야 함(특히 `time`은 ordered factor 권장).</li>
-                                <li>열 순서/레벨 불일치: `idata`의 `time` 레벨 순서가 `cbind(t0,t1,t2,t3)`의 열 순서와 일치해야 함.</li>
-                                <li>결측/불균형: `aov(Error(id/time))`은 결측에 취약함. 결측이 있으면 LMM이 더 나음.</li>
+                                <li>요인형 변환 누락: group, id, time은 factor여야 함(특히 time은 ordered factor 권장).</li>
+                                <li>열 순서/레벨 불일치: time 레벨 순서가 cbind(t0,t1,t2,t3) 열 순서와 일치해야 함.</li>
+                                <li>결측/불균형: 결측에 취약함. 결측이 있으면 LMM이 더 나음.</li>
                                 <li>구형성 가정: 전통적 RM ANOVA는 구형성 가정을 전제함. GG/HF 보정 p값을 함께 보고해야 함.</li>
                             </ul>
                         </li>
@@ -869,30 +867,30 @@ ggplot(summary_data, aes(x = time, y = mean_response, fill = group)) +
                     <h3 class="font-bold text-xl mb-3 text-blue-700">공통 및 데이터 조작/시각화</h3>
                     <pre><code>install.packages(c("tidyr", "dplyr", "ggplot2"))</code></pre>
                     <ul class="list-disc list-inside text-sm space-y-1 text-slate-700 mt-4">
-                        <li>`tidyr`: 데이터 형태를 wide에서 long으로 변환하는 등 데이터 정리에 필수적인 패키지임.</li>
-                        <li>`dplyr`: 데이터 필터링, 그룹화, 요약 등 데이터 조작에 강력한 기능을 제공하는 패키지임.</li>
-                        <li>`ggplot2`: 고품질의 통계 그래프를 생성하는 데 사용되는 시각화 패키지임.</li>
+                        <li>tidyr: 데이터 형태를 wide에서 long으로 변환하는 등 데이터 정리에 필수적인 패키지임.</li>
+                        <li>dplyr: 데이터 필터링, 그룹화, 요약 등 데이터 조작에 강력한 기능을 제공하는 패키지임.</li>
+                        <li>ggplot2: 고품질의 통계 그래프를 생성하는 데 사용되는 시각화 패키지임.</li>
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md content-card">
                     <h3 class="font-bold text-xl mb-3 text-green-700">RM ANOVA 관련</h3>
                     <pre><code>install.packages(c("ez", "car", "afex", "emmeans", "effectsize"))</code></pre>
                     <ul class="list-disc list-inside text-sm space-y-1 text-slate-700 mt-4">
-                        <li>`ez`: RM ANOVA를 쉽게 수행할 수 있는 함수 `ezANOVA()`를 제공하는 패키지임.</li>
-                        <li>`car`: `Anova()` 함수를 통해 다변량 접근 방식의 RM ANOVA를 포함한 다양한 분산 분석을 지원하는 패키지임.</li>
-                        <li>`afex`: `aov_ez()` 함수를 통해 구형성 검정 및 보정(Greenhouse-Geisser, Huynh-Feldt)을 편리하게 수행할 수 있도록 하는 패키지임.</li>
-                        <li>`emmeans`: 복잡한 모델의 사후 분석(post-hoc tests) 및 단순 효과(simple effects) 분석을 위한 강력한 도구임.</li>
-                        <li>`effectsize`: 효과 크기(예: 부분 에타 제곱)를 계산하는 기능을 제공하는 패키지임.</li>
+                        <li>ez: RM ANOVA를 쉽게 수행할 수 있는 함수 ezANOVA()를 제공하는 패키지임.</li>
+                        <li>car: Anova() 함수를 통해 다변량 접근 방식의 RM ANOVA를 포함한 다양한 분산 분석을 지원하는 패키지임.</li>
+                        <li>afex: aov_ez() 함수를 통해 구형성 검정 및 보정(Greenhouse-Geisser, Huynh-Feldt)을 편리하게 수행할 수 있도록 하는 패키지임.</li>
+                        <li>emmeans: 복잡한 모델의 사후 분석(post-hoc tests) 및 단순 효과(simple effects) 분석을 위한 강력한 도구임.</li>
+                        <li>effectsize: 효과 크기(예: 부분 에타 제곱)를 계산하는 기능을 제공하는 패키지임.</li>
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md content-card">
                     <h3 class="font-bold text-xl mb-3 text-purple-700">LMM 및 GEE 관련</h3>
                     <pre><code>install.packages(c("nlme", "lme4", "lmerTest", "geepack"))</code></pre>
                     <ul class="list-disc list-inside text-sm space-y-1 text-slate-700 mt-4">
-                        <li>`nlme`: 선형 및 비선형 혼합 효과 모델(`lme`, `nlme`)을 적합하는 데 사용됨. 다양한 상관 구조를 명시적으로 지정할 수 있는 패키지임.</li>
-                        <li>`lme4`: 선형 및 일반화 선형 혼합 모델(`lmer`, `glmer`)을 적합하는 데 주로 사용되는 패키지임. `nlme`보다 더 유연하고 효율적임.</li>
-                        <li>`lmerTest`: `lme4` 모델에 대한 p-값 및 자유도를 계산하여 `summary()` 및 `anova()` 출력에 추가하는 패키지임.</li>
-                        <li>`geepack`: 일반화 추정 방정식(`geeglm()`)을 사용하여 상관된 이항 또는 다른 비정규 분포 데이터를 분석하는 데 사용되는 패키지임.</li>
+                        <li>nlme: 선형 및 비선형 혼합 효과 모델(lme, nlme)을 적합하는 데 사용됨. 다양한 상관 구조를 명시적으로 지정할 수 있는 패키지임.</li>
+                        <li>lme4: 선형 및 일반화 선형 혼합 모델(lmer, glmer)을 적합하는 데 주로 사용되는 패키지임. `nlme`보다 더 유연하고 효율적임.</li>
+                        <li>lmerTest: lme4 모델에 대한 p-값 및 자유도를 계산하여 summary() 및 anova() 출력에 추가하는 패키지임.</li>
+                        <li>geepack: 일반화 추정 방정식(geeglm())을 사용하여 상관된 이항 또는 다른 비정규 분포 데이터를 분석하는 데 사용되는 패키지임.</li>
                     </ul>
                 </div>
             </div>
