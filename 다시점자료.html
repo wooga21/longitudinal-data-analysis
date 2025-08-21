@@ -610,7 +610,7 @@ ggplot(summary_df, aes(x = time, y = mean, group = group)) +
                             <pre><code># RM ANOVA: Subject(=id) 내에서 time 반복
 fit_aov &lt;- aov(response ~ group * time + Error(id/time), data = long_data)
 summary(fit_aov)</code></pre>
-                            <p class="text-sm text-slate-600 mt-2">해석: `Error: id:time` 줄의 `time` 주효과와 `group:time` 상호작용이 핵심임. `group` 주효과는 `Error: Within`이 아닌 `Error: id/Between` 쪽에서 확인됨.</p>
+                            <p class="text-sm text-slate-600 mt-2"></p>
                         </li>
                         <li>**Wide 자료에서 다변량 접근**:
                             <pre><code># install.packages("car")
@@ -629,9 +629,9 @@ idata &lt;- data.frame(time = factor(c("t0","t1","t2","t3"),
 car_rm &lt;- Anova(lm_mod, idata = idata, idesign = ~ time, type = "III")
 car_rm
 summary(car_rm, multivariate = TRUE) # Pillai 등 다변량 통계량</code></pre>
-                            <p class="text-sm text-slate-600 mt-2">`time` 주효과와 `group:time` 상호작용이 within-subject 효과임. `multivariate=TRUE` 요약은 구형성 가정 없이 다변량 통계량(Pillai, Wilks 등)을 보여줌. 오류가 나면: `idata`의 레벨 수(4)가 `cbind`에 들어간 열(t0–t3)과 같은지, `idesign = ~ time`이 포함됐는지, 인자 이름 오타가 없는지 점검해야 함.</p>
+                            <p class="text-sm text-slate-600 mt-2">time 주효과와 group:time 상호작용이 within-subject 효과임. multivariate=TRUE 요약은 구형성 가정 없이 다변량 통계량(Pillai, Wilks 등)을 보여줌.</p>
                         </li>
-                        <li>**구형성 검정 & 보정(권장): `afex::aov_ez()`**:
+                        <li>**구형성 검정 : afex**:
                             <pre><code># install.packages(c("afex","emmeans"))
 library(afex); library(emmeans)
 
