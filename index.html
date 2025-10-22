@@ -314,7 +314,7 @@
                         $H_1$: 구형성 가정을 만족하지 않음 ($P < 0.05$)
                     </p>
                     <p class="text-red-600 text-xs font-semibold">
-                        ⚠️ **가정 위배 시 대처:**<br>
+                         가정 위배 시 대처:<br>
                         $P < 0.05$일 경우, Greenhouse-Geisser 또는 Huynh-Feldt 수정값을 적용한 일변량 분석 결과를 사용하거나, 다변량 검정(Pillai's Trace, Wilks' Lambda 등) 결과를 해석함.
                     </p>
                 </div>
@@ -360,16 +360,16 @@
                     <h3 class="font-bold text-xl mb-3 text-green-700">고정 효과 (Fixed Effects)</h3>
                     <p class="text-slate-600 text-sm mb-4">고정 효과는 연구자가 특정 수준(level)에 관심이 있고, 그 수준들이 모집단 전체를 대표한다고 가정하는 요인들임. 즉, 이 요인들의 효과는 특정 값으로 고정되어 있으며, 다른 연구에서도 동일하게 적용될 것으로 기대됨.</p>
                     <ul class="list-disc list-inside ml-5 space-y-2 text-slate-700">
-                        <li>**예시**:
+                        <li> 예시:
                             <ul class="list-disc list-inside ml-5 mt-1">
-                                <li>**성별**: 남성/여성이라는 특정 범주</li>
-                                <li>**치료 그룹**: 신약 그룹/위약 그룹과 같이 연구자가 직접 설계한 그룹</li>
-                                <li>**시간**: 특정 시점(예: 0주차, 4주차, 8주차)의 효과</li>
+                                <li>성별: 남성/여성이라는 특정 범주</li>
+                                <li>치료 그룹: 신약 그룹/위약 그룹과 같이 연구자가 직접 설계한 그룹</li>
+                                <li>시간: 특정 시점(예: 0주차, 4주차, 8주차)의 효과</li>
                             </ul>
                         </li>
-                        <li>**특징**:
+                        <li>특징:
                             <ul class="list-disc list-inside ml-5 mt-1">
-                                <li>일반적으로 **평균 차이**나 **회귀 계수**로 해석됨.</li>
+                                <li>일반적으로 평균 차이나 회귀 계수로 해석됨.</li>
                                 <li>모집단 전체에 대한 일반화가 목적임.</li>
                             </ul>
                         </li>
@@ -380,21 +380,21 @@
                     <h3 class="font-bold text-xl mb-3 text-green-700">랜덤 효과 (Random Effects)</h3>
                     <p class="text-slate-600 text-sm mb-4">랜덤 효과는 연구자가 특정 수준 자체보다는 그 수준들이 파생된 더 큰 모집단에 관심이 있고, 해당 수준들이 그 모집단에서 무작위로 추출되었다고 가정하는 요인들임. 이 요인들의 효과는 특정 값이 아니라 **분포(예: 정규 분포)**를 따른다고 가정함.</p>
                     <ul class="list-disc list-inside ml-5 space-y-2 text-slate-700">
-                        <li>**예시**:
+                        <li>예시:
                             <ul class="list-disc list-inside ml-5 mt-1">
-                                <li>**환자 ID**: 연구에 참여한 개별 환자들은 전체 환자 모집단에서 무작위로 추출된 것으로 간주됨. 각 환자마다 반응의 초기값이나 시간에 따른 변화율이 다를 수 있음.</li>
-                                <li>**의료 기관**: 여러 병원에서 데이터를 수집할 때, 각 병원은 전체 병원 모집단에서 무작위로 추출된 것으로 간주될 수 있음.</li>
+                                <li>환자 ID: 연구에 참여한 개별 환자들은 전체 환자 모집단에서 무작위로 추출된 것으로 간주됨. 각 환자마다 반응의 초기값이나 시간에 따른 변화율이 다를 수 있음.</li>
+                                <li>의료 기관: 여러 병원에서 데이터를 수집할 때, 각 병원은 전체 병원 모집단에서 무작위로 추출된 것으로 간주될 수 있음.</li>
                             </ul>
                         </li>
-                        <li>**주요 유형**:
+                        <li>주요 유형:
                             <ul class="list-disc list-inside ml-5 mt-1">
-                                <li>**랜덤 절편 (Random Intercept)**: 개체마다 종속 변수의 시작점(평균)이 다름을 모델링함. (예: 환자마다 초기 BPRS 점수가 다름)</li>
-                                <li>**랜덤 기울기 (Random Slope)**: 개체마다 독립 변수(예: 시간)에 따른 종속 변수의 변화율(기울기)이 다름을 모델링함. (예: 환자마다 시간에 따른 BPRS 점수 감소 속도가 다름)</li>
+                                <li>랜덤 절편 (Random Intercept): 개체마다 종속 변수의 시작점(평균)이 다름을 모델링함. (예: 환자마다 초기 BPRS 점수가 다름)</li>
+                                <li>랜덤 기울기 (Random Slope): 개체마다 독립 변수(예: 시간)에 따른 종속 변수의 변화율(기울기)이 다름을 모델링함. (예: 환자마다 시간에 따른 BPRS 점수 감소 속도가 다름)</li>
                             </ul>
                         </li>
-                        <li>**특징**:
+                        <li>특징:
                             <ul class="list-disc list-inside ml-5 mt-1">
-                                <li>주로 **분산 성분(Variance Component)**으로 해석됨.</li>
+                                <li>주로 분산 성분(Variance Component)으로 해석됨.</li>
                                 <li>개체 간의 이질성을 설명하고, 개체 내 측정값 간의 상관성을 간접적으로 설명함.</li>
                             </ul>
                         </li>
@@ -481,12 +481,12 @@
                 <div class="bg-white p-6 rounded-xl shadow-md content-card">
                     <h3 class="font-bold text-xl mb-3 text-purple-700">GEE의 주요 특징</h3>
                     <ul class="list-disc list-inside ml-5 space-y-2 text-slate-700">
-                        <li>**결과 변수의 유연성**: 연속형 외에도 범주형(이항, 다항 등) 자료를 분석할 수 있음. 이는 LMM이 주로 연속형 결과 변수에 사용되는 것과 대조적임.</li>
-                        <li>**결측치 처리**: LMM과 마찬가지로 결측치가 있어도 해당 개체를 분석에서 제외하지 않고 적용할 수 있음.</li>
-                        <li>**상관 구조 선택**: 반복 요인 수준 간 상관 구조를 설정할 수 있음 (예: 독립, 복합 대칭, 자기회귀 등). LMM에 비해 상관 구조 선택에 덜 민감한 경향이 있음.</li>
-                        <li>**정규성 가정의 유연성**: 결과 변수가 연속형일 때 정규성 가정을 다소 벗어나더라도 분석 결과에 영향을 덜 받음.</li>
-                        <li>**모집단 평균 추론 (Population-average Inference)**: 개별 개체의 특성보다는 모집단 전체의 평균적인 변화 패턴에 초점을 맞춤.</li>
-                        <li>**랜덤 효과 미고려**: LMM과 달리 개체별 랜덤 효과를 직접적으로 모형에 포함하지 않음.</li>
+                        <li>결과 변수의 유연성: 연속형 외에도 범주형(이항, 다항 등) 자료를 분석할 수 있음. 이는 LMM이 주로 연속형 결과 변수에 사용되는 것과 대조적임.</li>
+                        <li>결측치 처리: LMM과 마찬가지로 결측치가 있어도 해당 개체를 분석에서 제외하지 않고 적용할 수 있음.</li>
+                        <li>상관 구조 선택: 반복 요인 수준 간 상관 구조를 설정할 수 있음 (예: 독립, 복합 대칭, 자기회귀 등). LMM에 비해 상관 구조 선택에 덜 민감한 경향이 있음.</li>
+                        <li>정규성 가정의 유연성: 결과 변수가 연속형일 때 정규성 가정을 다소 벗어나더라도 분석 결과에 영향을 덜 받음.</li>
+                        <li>모집단 평균 추론 (Population-average Inference): 개별 개체의 특성보다는 모집단 전체의 평균적인 변화 패턴에 초점을 맞춤.</li>
+                        <li>랜덤 효과 미고려: LMM과 달리 개체별 랜덤 효과를 직접적으로 모형에 포함하지 않음.</li>
                     </ul>
                 </div>
 
@@ -550,7 +550,7 @@
                 <div class="bg-white p-6 rounded-xl shadow-md content-card">
                     <h3 class="font-bold text-2xl mb-4 text-blue-700">RM ANOVA R 사용법</h3>
                     <ol class="list-decimal list-inside space-y-4 text-slate-700">
-                        <li>**실습 목표**:
+                        <li>실습 목표:
                             <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
                                 <li>Wide → Long 데이터 변환</li>
                                 <li>일변량 접근으로 RM ANOVA</li>
@@ -560,7 +560,7 @@
                                 <li>혼합모형(LMM) 대안</li>
                             </ul>
                         </li>
-                        <li>**재현 가능한 예제 데이터 만들기 (Wide 형식)**:
+                        <li>재현 가능한 예제 데이터 만들기 (Wide 형식):
                             <pre><code>set.seed(123)
 
 data_wide &lt;- data.frame(
@@ -575,7 +575,7 @@ data_wide &lt;- data.frame(
 str(data_wide)
 head(data_wide, 3)</code></pre>
                         </li>
-                        <li>**Long 형식으로 변환**:
+                        <li>Long 형식으로 변환:
                             <pre><code># 필요한 패키지
 # install.packages(c("tidyr","dplyr","ggplot2"))
 library(tidyr); library(dplyr); library(ggplot2)
@@ -592,7 +592,7 @@ long_data &lt;- data_wide |&gt;
 str(long_data)
 head(long_data, 6)</code></pre>
                         </li>
-                        <li>**기초 시각화 (그룹×시간 평균 추이)**:
+                        <li>기초 시각화 (그룹×시간 평균 추이):
                             <pre><code>summary_df &lt;- long_data |&gt;
   group_by(group, time) |&gt;
   summarise(mean = mean(response), se = sd(response)/sqrt(n()), .groups = "drop")
@@ -605,13 +605,13 @@ ggplot(summary_df, aes(x = time, y = mean, group = group)) +
        title = "RM ANOVA 실습: 그룹별 시간 변화") +
   theme_bw()</code></pre>
                         </li>
-                        <li>**전통적 RM ANOVA **:
+                        <li>전통적 RM ANOVA :
                             <pre><code># RM ANOVA: Subject(=id) 내에서 time 반복
 fit_aov &lt;- aov(response ~ group * time + Error(id/time), data = long_data)
 summary(fit_aov)</code></pre>
                             <p class="text-sm text-slate-600 mt-2"></p>
                         </li>
-                        <li>**Wide 자료에서 다변량 접근**:
+                        <li>Wide 자료에서 다변량 접근:
                             <pre><code># install.packages("car")
 library(car)
 
@@ -630,7 +630,7 @@ car_rm
 summary(car_rm, multivariate = TRUE) # Pillai 등 다변량 통계량</code></pre>
                             <p class="text-sm text-slate-600 mt-2"> time 주효과와 group:time 상호작용이 within-subject 효과임. multivariate=TRUE 요약은 구형성 가정 없이 다변량 통계량(Pillai, Wilks 등)을 보여줌. </p>
                         </li>
-                        <li>**구형성 검정 : afex**:
+                        <li>구형성 검정 : afex:
                             <pre><code># install.packages(c("afex","emmeans"))
 library(afex); library(emmeans)
 
@@ -647,7 +647,7 @@ fit_afex       # Mauchly's test, GG/HF 보정 p-value 포함
 nice(fit_afex) # 보기 좋은 요약표</code></pre>
                             <p class="text-sm text-slate-600 mt-2"></p>
                         </li>
-                        <li>**사후분석(단순효과 & 대비): `emmeans`**:
+                        <li>사후분석(단순효과 & 대비): `emmeans`:
                             <pre><code># 시간별 그룹 차이(단순효과)
 emm_time_by_grp &lt;- emmeans(fit_afex, ~ group | time)
 pairs(emm_time_by_grp, adjust = "bonferroni")
@@ -659,14 +659,14 @@ pairs(emm_grp_by_time, adjust = "bonferroni")
 # 선형 대비(예: 시간의 선형 트렌드 차이, group 간)
 contrast(emmeans(fit_afex, ~ time | group), "poly")</code></pre>
                         </li>
-                        <li>**효과크기**:
+                        <li>효과크기:
                             <pre><code># install.packages("effectsize")
 library(effectsize)
 
 eta_squared(fit_aov, partial = TRUE) 
 # afex 객체에서도 effectsize::eta_squared() 사용 가능</code></pre>
                         </li>
-                        <li>**혼합모형(LMM) 대안: 불균형/결측/시간간격 불규칙에 유리**:
+                        <li>혼합모형(LMM) 대안: 불균형/결측/시간간격 불규칙에 유리:
                             <pre><code># install.packages(c("lme4","lmerTest"))
 library(lme4); library(lmerTest)
 
@@ -682,7 +682,7 @@ summary(fit_lmm2)
 emmeans(fit_lmm2, ~ group | time) |&gt; pairs()</code></pre>
                             <p class="text-sm text-slate-600 mt-2">LMM은 구형성 가정이 불필요하고, 결측/불균형 데이터에 강인함.</p>
                         </li>
-                        <li>**자주 생기는 오류와 해결법**:
+                        <li>자주 생기는 오류와 해결법:
                             <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
                                 <li>요인형 변환 누락: group, id, time은 factor여야 함(특히 time은 ordered factor 권장).</li>
                                 <li>열 순서/레벨 불일치: time 레벨 순서가 cbind(t0,t1,t2,t3) 열 순서와 일치해야 함.</li>
@@ -690,10 +690,10 @@ emmeans(fit_lmm2, ~ group | time) |&gt; pairs()</code></pre>
                                 <li>구형성 가정: 전통적 RM ANOVA는 구형성 가정을 전제함. GG/HF 보정 p값을 함께 보고해야 함.</li>
                             </ul>
                         </li>
-                        <li>**보고/해석 가이드(간단 예시)**:
+                        <li>보고/해석 가이드(간단 예시):
                             <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
-                                <li>**주효과(time)**: 시간에 따라 평균이 유의하게 변화하는지 여부.</li>
-                                <li>**상호작용(group×time)**: 두 그룹의 시간에 따른 변화 패턴이 다른지 여부.
+                                <li>주효과(time): 시간에 따라 평균이 유의하게 변화하는지 여부.</li>
+                                <li>상호작용(group×time): 두 그룹의 시간에 따른 변화 패턴이 다른지 여부.
                                     <ul class="list-disc list-inside ml-5 mt-1">
                                         <li>유의하면 단순효과(시간별 그룹 비교 또는 그룹별 시간 비교)로 해석/보고함.</li>
                                     </ul>
@@ -706,12 +706,12 @@ emmeans(fit_lmm2, ~ group | time) |&gt; pairs()</code></pre>
                 <div class="bg-white p-6 rounded-xl shadow-md content-card">
                     <h3 class="font-bold text-2xl mb-4 text-green-700">LMM R 사용법</h3>
                     <ol class="list-decimal list-inside space-y-3 text-slate-700">
-                        <li>**패키지 로드**:
+                        <li>패키지 로드:
                             <pre><code># install.packages(c("tidyr","dplyr","ggplot2","nlme"))
 library(tidyr); library(dplyr);
 library(ggplot2); library(nlme)</code></pre>
                         </li>
-                        <li>**예시 데이터 (wide) 생성**:
+                        <li>예시 데이터 (wide) 생성:
                             <pre><code>set.seed(123)
 data_wide &lt;- data.frame(
   id    = 1:40,
@@ -722,7 +722,7 @@ data_wide &lt;- data.frame(
   t3    = rnorm(40, mean = 35, sd = 10)
 )</code></pre>
                         </li>
-                        <li>**wide → long 변환**:
+                        <li>wide → long 변환:
                             <pre><code>long_data_lmm &lt;- data_wide %&gt;%
   pivot_longer(cols = starts_with("t"),
                names_to = "time_char", values_to = "response_value") %&gt;%
@@ -734,7 +734,7 @@ data_wide &lt;- data.frame(
   ) %&gt;%
   select(id, group, time, time_f, response_value)</code></pre>
                         </li>
-                        <li>**그림 1: 스파게티 + 그룹 평균선**:
+                        <li>그림 1: 스파게티 + 그룹 평균선:
                             <pre><code>p1 &lt;- ggplot(long_data_lmm, aes(x = time, y = response_value, group = id, color = group)) +
   geom_line(alpha = 0.35) +
   # 그룹 평균선(굵게)
@@ -747,7 +747,7 @@ data_wide &lt;- data.frame(
 print(p1)
 # ggsave("rm_spaghetti_R.png", p1, width = 8, height = 5, dpi = 200) # 파일 저장 (실행하지 않음)</code></pre>
                         </li>
-                        <li>**그림 2: 그룹×시간 평균 ± SE**:
+                        <li>그림 2: 그룹×시간 평균 ± SE:
                             <pre><code>summary_df &lt;- long_data_lmm %&gt;%
   group_by(group, time) %&gt;%
   summarise(mean = mean(response_value),
@@ -766,7 +766,7 @@ p2 &lt;- ggplot(summary_df,
 print(p2)
 # ggsave("rm_means_se_R.png", p2, width = 8, height = 5, dpi = 200) # 파일 저장 (실행하지 않음)</code></pre>
                         </li>
-                        <li>**AR(1) LMM 적합: time_f(범주형) + AR(1){time(숫자)}**:
+                        <li>AR(1) LMM 적합: time_f(범주형) + AR(1){time(숫자)}:
                             <pre><code>fit_cat_ar1 &lt;- nlme::lme(fixed       = response_value ~ group * time_f,    # time_f: 범주형
                          random      = ~ 1 | id,                           # 랜덤 절편
                          correlation = nlme::corAR1(form = ~ time | id), # 숫자 time 기반 AR(1)
@@ -777,7 +777,7 @@ print(p2)
 anova(fit_cat_ar1)
 summary(fit_cat_ar1)</code></pre>
                         </li>
-                        <li>**사후 분석**:
+                        <li>사후 분석:
                             <pre><code># install.packages("emmeans")
 library(emmeans)
 
@@ -796,7 +796,7 @@ pairs(emm_t_by_g, adjust = "holm")</code></pre>
                     <h3 class="font-bold text-2xl mb-4 text-purple-700">GEE (일반화 추정 방정식) R 사용법</h3>
                     <p class="text-slate-600 mb-4">GEE는 geepack 패키지의 geeglm() 함수를 주로 사용함. 범주형 결과 변수에 특히 유용하며, 데이터는 Long format으로 준비되어야 함.</p>
                     <ol class="list-decimal list-inside space-y-3 text-slate-700">
-                        <li>**데이터 준비 (Long Format)**:
+                        <li>데이터 준비 (Long Format):
                             <p class="text-sm text-slate-600 mt-2">LMM과 동일하게 Long format 데이터가 필요함. `response_binary`와 같은 이항형 결과 변수를 포함함.</p>
                             <pre><code># 예시 데이터 생성 (이항 결과 변수)
 # long_data_gee는 LMM 예시의 long_data_lmm에서 파생
@@ -805,7 +805,7 @@ long_data_gee &lt;- long_data_lmm %&gt;%
          time = factor(time)) # GEE에서는 time을 factor로 사용하는 경우가 많음
 print(head(long_data_gee))</code></pre>
                         </li>
-                        <li>**GEE 실행**:
+                        <li>GEE 실행:
                             <p class="text-sm text-slate-600 mt-2"> geepack 패키지의 geeglm() 함수를 사용하여 일반화 추정 방정식을 실행함. family와 corstr (상관 구조)를 지정하는 것이 중요함.</p>
                             <pre><code># 필요한 패키지 설치 및 로드
 # install.packages("geepack")
@@ -822,7 +822,7 @@ model_gee &lt;- geeglm(response_binary ~ group * time,
                      corstr = "ar1")
 summary(model_gee)</code></pre>
                         </li>
-                        <li>**결과 시각화 (예시)**:
+                        <li>결과 시각화 (예시):
                             <p class="text-sm text-slate-600 mt-2">그룹별 시간에 따른 이항형 결과 변수의 비율 변화를 막대 그래프 등으로 시각화함.</p>
                             <pre><code># install.packages("ggplot2")
 library(ggplot2)
